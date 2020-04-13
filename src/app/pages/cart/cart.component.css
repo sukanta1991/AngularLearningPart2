@@ -1,0 +1,10 @@
+.table>tbody>tr>td, .table>tfoot>tr>td{
+  vertical-align: middle;
+}
+#footer {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
+}

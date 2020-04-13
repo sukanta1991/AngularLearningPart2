@@ -1,0 +1,43 @@
+<app-header></app-header> <!-- should have a <app-header> -->
+
+<!-- should have a <section> with a table of columns product, price, quantity, subtotal -->
+<!-- the subtotal should have delete button to delete the product-->
+<section style="margin-top: 3.5rem;">
+  <div *ngIf="emptyCart; then emptyCartImage; else cartTable;"></div>
+  <ng-template #emptyCartImage>
+    <div class="fluid-container">
+      <img class="w-100 img-fluid" src="../../assets/images/emptyCart.jpg" alt="empty-cart">
+    </div>
+  </ng-template>
+  <ng-template #cartTable>
+    <div class="container pt-4 h-100">
+      <h2>Cart</h2>
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th class="w-50" scope="col">Product</th>
+            <th class="w-10" scope="col">Price</th>
+            <th class="w-20" scope="col">Quantity</th>
+            <th class="w-20" scope="col">SubTotal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items; index as i">
+            <td>{{item.productName}}</td>
+            <td>{{item.price}}</td>
+            <td><input type="number" (change)="update()" class="form-control text-center w-50"
+                [(ngModel)]=item.quantity></td>
+            <td>{{subTotal[i]}} <button (click)="remove(i)" class="btn btn-danger btn-sm float-right"><em
+                  class="fa fa-trash-o"></em></button></td>
+          </tr>
+          <tr>
+            <td colspan="3"></td>
+            <td><strong>Total: Rs.{{total}}</strong><button (click)="checkOut()"
+                class="btn btn-outline-info float-right">Check Out</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </ng-template>
+</section>
+<app-footer id="footer" ></app-footer> <!-- should have a <app-footer> -->

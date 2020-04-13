@@ -1,0 +1,78 @@
+<app-header></app-header> <!-- should have a <app-header> -->
+
+<!-- should have a <section> with bootstrap accordian to display User Details, Previous Orders -->
+<!-- use ngModel to double bind user values for updation-->
+<section style="margin-top: 3.5rem; ">
+  <div class="accordion" id="accordionExample">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h2 class="mb-0">
+          <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
+            User Details
+          </button>
+        </h2>
+      </div>
+
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">FirstName</label>
+                <input type="text" [(ngModel)]=user.firstName [ngModelOptions]="{standalone: true}" class="form-control"
+                  id="firstName" placeholder="FirstName">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">LastName</label>
+                <input type="text" [(ngModel)]=user.lastName [ngModelOptions]="{standalone: true}" class="form-control"
+                  id="lastName" placeholder="LastName">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Email</label>
+                <input type="email" [(ngModel)]=user.email [ngModelOptions]="{standalone: true}" class="form-control"
+                  id="inputEmail" placeholder="Email">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Password</label>
+                <input type="password" [(ngModel)]=user.password    this.hideLoginModal = true; [ngModelOptions]="{standalone: true}" class="
+                  form-control" id="inputPassword" placeholder="Password">
+              </div>
+            </div>
+            <button (click)="update()" class="btn btn-outline-info mb-3 float-right">Update</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h2 class="mb-0">
+          <button class="btn btn-dark collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
+            aria-expanded="false" aria-controls="collapseTwo">
+            Orders
+          </button>
+        </h2>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div class="card-body">
+          <div class="card-deck">
+            <div *ngFor="let order of orders; index as i" class="card" style="width: 18rem;">
+              <div class="card-header">
+                Status: {{order.status}}<span class="float-right">Rs.{{order.totalBill}}</span>
+              </div>
+              <ul class="list-group list-group-flush">
+
+                <li *ngFor="let item of order.cartProducts" class="list-group-item">{{item.productName}} <span
+                    class="float-right">{{item.quantity}}</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer id="footer"></app-footer> <!-- should have a <app-footer> -->

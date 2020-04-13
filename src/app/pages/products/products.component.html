@@ -1,0 +1,32 @@
+<app-header></app-header> <!-- should have a <app-header> -->
+
+<!-- should have a <section> with card grid to display all products -->
+<section style="margin-top: 3.7rem;">
+  <div class="card-deck pt-3 mr-0 pl-lg-4">
+    <div *ngFor="let item of items; index as i">
+      <div class="card border-dark mb-3" style="width:300px; height:500px;">
+        <img src="{{item.image}}" style="height:300px;" class="card-img-top img-fluid" alt="{{item.name}}">
+        <div class="card-body bg-dark text-white no-gutters row">
+          <div class="col">
+            <h5 class="card-title">{{item.name}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{item.description}}</h6>
+            <h2>Rs.{{item.price}}</h2>
+          </div>
+          <div class="form-group">
+            <label>Quantity</label>
+            <select (change)="changeQuantity($event,i)" class="form-control">
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+              <option value="4">Four</option>
+              <option value="5">Five</option>
+            </select>
+          </div>
+          <button (click)="add(item)" class="btn btn-outline-info float-right">Add To Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer><!-- should have a <app-footer> -->
