@@ -16,7 +16,7 @@ In order to increase their product consumers Organic world needs a solution that
 
 - In e2e testing allevery component is tested together with the backend support using protractor. Uint testing should be done using mock values given with jasmine's mock testing libraries.
 
-## There would be three roles in this application. They would be allowed to perform activities based on their role
+## The roles in this application are
 
 - Consumer: View differents products available in store and buy directly through online transaction
 
