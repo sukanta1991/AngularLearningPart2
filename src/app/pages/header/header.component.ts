@@ -7,6 +7,7 @@ import * as $ from 'jquery';
 import { LoginRegisterService } from '../../services/login-register.service';
 import { AccountService } from '../../services/account.service';
 import { MustMatch } from './register.validator';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-header',
@@ -28,7 +29,8 @@ export class HeaderComponent implements OnInit {
     private loginService: LoginRegisterService,
     private accountService: AccountService,
     private fb: FormBuilder,
-    private route: Router
+    private route: Router,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit() {
@@ -81,20 +83,28 @@ export class HeaderComponent implements OnInit {
   //  else create a user account for registered user using updateAccountDetails in accountService
   //  and store in a sessionStorage item 'user' and navigate to 'products/all'
   logIn(post) {
-    this.loginService.login(post).subscribe((data) => {
-      console.log('token received: ' + data.access_token);
-      sessionStorage.setItem('token', data.access_token);
-      this.isLoggedIn = true;
-      this.accountService.getAccountDetails(post.email).subscribe((details) => {
-        if (details[0] === undefined) {
-          this.accountService.updateAccountDetails(this.user).subscribe();
-          sessionStorage.setItem('user', JSON.stringify(this.user));
-        } else {
-          sessionStorage.setItem('user', JSON.stringify(details[0]));
-        }
-      });
-      this.route.navigateByUrl('products/all');
-    });
+    this.loginService.login(post).subscribe(
+      result => {
+        console.log('token received: ' + result.access_token);
+        sessionStorage.setItem('token', result.access_token);
+        this.isLoggedIn = true;
+        this.accountService.getAccountDetails(post.email).subscribe((details) => {
+          if (details[0] === undefined) {
+            this.accountService.updateAccountDetails(this.user).subscribe();
+            sessionStorage.setItem('user', JSON.stringify(this.user));
+          } else {
+            sessionStorage.setItem('user', JSON.stringify(details[0]));
+          }
+        });
+        this.route.navigateByUrl('products/all');
+      },
+      error => {
+        console.log(error);
+        this.toastr.error(error, 'Login Error', {
+          timeOut: 3000
+        });
+      },
+    );
   }
 
   // Function to register an user,intialize user variable and open the login modal

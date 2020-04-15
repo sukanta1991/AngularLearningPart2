@@ -3,6 +3,7 @@ import { Order, status } from './../../modals/order';
 import { CartProduct } from './../../modals/cartProduct';
 import { Component, OnInit } from '@angular/core';
 import { Customer } from 'src/app/modals/customer';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-cart',
@@ -17,7 +18,7 @@ export class CartComponent implements OnInit {
   total: number;
   order: Order = {};
   subTotal: number[] = [];
-  constructor(private orderService: OrderService) {}
+  constructor(private orderService: OrderService, private toastr: ToastrService) {}
 
   ngOnInit() {
     this.getCart();
@@ -64,7 +65,7 @@ export class CartComponent implements OnInit {
   checkOut() {
     this.order.cartProducts = this.items;
     this.order.customerId = this.user.id;
-    if (this.user.address[0] !== undefined) {
+    if (this.user.address !== undefined) {
       this.order.billingAddress = this.user.address[0];
       this.order.deliveryAddress = this.user.address[0];
     }
@@ -73,6 +74,6 @@ export class CartComponent implements OnInit {
     this.order.totalBill = this.total;
     this.order.status = status.OrderPlaced;
     sessionStorage.removeItem('cart');
-    this.orderService.addOrders(this.order).subscribe();
+    this.orderService.addOrders(this.order).subscribe( () => this.toastr.success('Order is placed'));
   }
 }

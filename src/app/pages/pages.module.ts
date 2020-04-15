@@ -27,7 +27,15 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     CommonModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot(
+      {
+        timeOut: 2000,
+        positionClass: 'toast-bottom-right',
+        preventDuplicates: true,
+        maxOpened: 4,
+        closeButton: true
+      }
+    ),
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,

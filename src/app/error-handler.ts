@@ -19,6 +19,6 @@ export class ErrorHandler {
       );
     }
     // return an observable with a user-facing error message
-    return throwError('Something bad happened; please try again later.');
+    return throwError(error.error.message);
   }
 }

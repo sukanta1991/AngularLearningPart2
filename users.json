@@ -1,1 +1,6 @@
-{"users":[{"id":1,"email":"bruno@email.com","password":"bruno"},{"id":2,"email":"nilson@email.com","password":"nilson"},{"id":3,"email":"john@email.com","password":"johnnny"},{"id":4,"email":"sanjiv.nishanth@gmail.com","password":"ladjgksgjkslgk"},{"id":5,"email":"sanjiv.nishanth@gmail.com","password":"lkaenflkeakl"},{"id":6,"email":"sanjiv.nishanth@gmail.com","password":"ladf;f;ks;kd"}]}
+{
+  "users": [
+    { "id": 1, "email": "bruno@email.com", "password": "bruno" },
+    { "id": 2, "email": "nilson@email.com", "password": "nilson" }
+  ]
+}
