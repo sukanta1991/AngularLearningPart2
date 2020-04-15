@@ -2,6 +2,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { PagesRoutingModule } from './pages-routing.module';
 import { AccountComponent } from './account/account.component';
@@ -24,6 +26,8 @@ import { FooterComponent } from './footer/footer.component';
   providers: [],
   imports: [
     CommonModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,

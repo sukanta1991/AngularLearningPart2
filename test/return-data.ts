@@ -5,6 +5,8 @@ import { CartProduct } from 'src/app/modals/cartProduct';
 
 export const token = { access_token: 'jwtToken134ouqegkjaf-hksdbhfqfakfhwiuf'};
 
+export const loginCredentials = { email: 'bruno@email.com', password: 'bruno' };
+
 export const cart: CartProduct[] = [
   {
     productId: '18',
@@ -19,6 +21,15 @@ export const cart: CartProduct[] = [
     price: 176
   }
 ];
+
+export const product: Product = {
+  id: '11',
+  image: '../../../assets/images/Green apple.jpeg',
+  category: 'fruit',
+  name: 'Green Apple',
+  description: '4pcs',
+  price: 266,
+};
 
 export const user: Customer = {
   id: '1',

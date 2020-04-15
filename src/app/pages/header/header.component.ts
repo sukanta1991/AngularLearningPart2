@@ -56,7 +56,7 @@ export class HeaderComponent implements OnInit {
     this.registerForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(7)]],
-      confirmPassword: ['', [Validators.required, Validators.minLength(7)]],
+      confirmPassword: ['', [Validators.required]],
     },
     {
      validator: MustMatch('password', 'confirmPassword')

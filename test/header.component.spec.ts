@@ -1,3 +1,4 @@
+import { AccountService } from './../src/app/services/account.service';
 import { LoginRegisterService } from 'src/app/services/login-register.service';
 import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
@@ -12,6 +13,7 @@ describe('HeaderComponent', () => {
   const newUser = { email: 'bruno@email.com', password: 'bruno' };
   let component: HeaderComponent;
   let service: LoginRegisterService;
+  let accountService: AccountService;
   let fixture: ComponentFixture<HeaderComponent>;
 
   beforeEach(async(() => {
@@ -34,36 +36,36 @@ describe('HeaderComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should have createForm method', () => {
-    // Write logic here
+  it('should have createForm function', () => {
+    // Testcase to check function existence
   });
 
-  it('should have login method', () => {
-    // Write logic here
+  it('should have login function', () => {
+    // Testcase to check function existence
   });
 
-  it('should have register method', () => {
-    // Write logic here
+  it('should have register function', () => {
+    // Testcase to check function existence
   });
 
-  it('should have search method', () => {
-    // Write logic here
+  it('should have search function', () => {
+    // Testcase to check function existence
   });
 
-  it('should have loggedInCheck method', () => {
-    // Write logic here
+  it('should have loggedInCheck function', () => {
+    // Testcase to check function existence
   });
 
   it('should have loginForm', () => {
-    // Write logic here
+    // Testcase to check formGroup existence
   });
 
   it('should have registerForm', () => {
-    // Write logic here
+    // Testcase to check formGroup existence
   });
 
   it('should have searchForm', () => {
-    // Write logic here
+    // Testcase to check formGroup existence
   });
 
   it('loginForm invalid when empty', () => {
@@ -82,19 +84,13 @@ describe('HeaderComponent', () => {
     // Write logic here
   });
 
-  it('loginForm email field validity', () => {
-    // Write logic here
+  it('login function authentication', () => {
+    // Testcase to check whether function authenticate and store token in sessionStorage
+    // Use spyOn to give a value or mock functions of service
   });
 
-  it('registerForm email field validity', () => {
-    // Write logic here
-  });
-
-  it('login method authentication', () => {
-    // Write logic here
-  });
-
-  it('should create new user using register method', () => {
-    // Write logic here
+  it('should create new user using register function', () => {
+    // Testcase to check whether function register a new user
+    // Use spyOn to mock a function of service
   });
 });

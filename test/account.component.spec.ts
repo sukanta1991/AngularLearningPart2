@@ -40,24 +40,26 @@ describe('AccountComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should have getOrders method', () => {
-    expect(component.getOrders).toBeTruthy();
+  it('should have getOrders function', () => {
+    // Testcase to check function existence
   });
 
-  it('should have getUserDetails method', () => {
-    // Write logic here
+  it('should have getUserDetails function', () => {
+    // Testcase to check function existence
   });
 
-  it('should have update method', () => {
-    // Write logic here
+  it('should have update function', () => {
+    // Testcase to check function existence
   });
 
   it('getOrders should get all the orders of the user', () => {
-    // Write logic here
+    // Testcase to check whether function returns all orders of a customer using customer id '1'
+    // Use spyOn to give a value(ordersByCustomer) from return-data.ts when a function of service is called
   });
 
-  it('update method should update the user details in backend', () => {
-    // Write logic here;
+  it('update function should update the user details in backend', () => {
+    // Testcase to check whether function updates the customer updated details
+    // Use spyOn to mock a function of service
   });
 
 });

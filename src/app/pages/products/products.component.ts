@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { ProductService } from 'src/app/services/product.service';
 import { Product } from 'src/app/modals/product';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-products',
@@ -17,7 +18,8 @@ export class ProductsComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit() {
@@ -70,6 +72,7 @@ export class ProductsComponent implements OnInit {
     let cart: CartProduct[] = [];
     const product: CartProduct = {};
     let present = false;
+    this.toastr.success(item.name + ' is added to cart');
     if (sessionStorage.getItem('cart') !== null) {
       cart = JSON.parse(sessionStorage.getItem('cart'));
       cart.forEach((data) => {

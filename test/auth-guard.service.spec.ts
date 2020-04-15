@@ -18,8 +18,12 @@ describe('AuthGuardService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should be created', () => {
-    // Write logic here
+  it('should have canActivate function', () => {
+    // Testcase to check function existence
+  });
+
+  it('canActivate function should check sessionStorage for token', () => {
+    // Testcase to check whether function verifies user is authenticated
   });
 
 });

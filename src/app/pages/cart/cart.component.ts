@@ -7,7 +7,7 @@ import { Customer } from 'src/app/modals/customer';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  styleUrls: ['./cart.component.css'],
 })
 // Class used to display cart and calculate Total
 export class CartComponent implements OnInit {
@@ -17,7 +17,7 @@ export class CartComponent implements OnInit {
   total: number;
   order: Order = {};
   subTotal: number[] = [];
-  constructor(private orderService: OrderService) { }
+  constructor(private orderService: OrderService) {}
 
   ngOnInit() {
     this.getCart();
@@ -46,7 +46,7 @@ export class CartComponent implements OnInit {
   // Function to calculate total and subtotal
   calculate() {
     this.total = 0;
-    this.items.forEach( (item, i) => {
+    this.items.forEach((item, i) => {
       this.subTotal[i] = item.price * item.quantity;
       this.total += this.subTotal[i];
     });
@@ -64,8 +64,10 @@ export class CartComponent implements OnInit {
   checkOut() {
     this.order.cartProducts = this.items;
     this.order.customerId = this.user.id;
-    this.order.billingAddress = this.user.address[0];
-    this.order.deliveryAddress = this.user.address[0];
+    if (this.user.address[0] !== undefined) {
+      this.order.billingAddress = this.user.address[0];
+      this.order.deliveryAddress = this.user.address[0];
+    }
     this.order.paymentDetails = 'Card';
     this.order.billingDate = new Date();
     this.order.totalBill = this.total;

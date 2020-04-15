@@ -37,19 +37,19 @@ describe('ProductsComponent', () => {
   });
 
   it('should have add function', () => {
-    // Write logic here
+    // Testcase to check function existence
   });
 
   it('should have changeQuantitiy function', () => {
-    // Write logic here
+    // Testcase to check function existence
   });
 
   it('should have routeAnalyser function', () => {
-    // Write logic here
+    // Testcase to check function existence
   });
 
-  it('add method should add to sessionStorage item "cart" ', () => {
-    // Write logic here
+  it('add method should add a product to sessionStorage item "cart" ', () => {
+    // Testcase to check whether item is added to sessionStorage using a sample 'product' in return-data.ts
   });
 
 });
@@ -83,7 +83,8 @@ describe('ProductsComponent- get products of category fruit', () => {
   });
 
   it('should get products of category fruit from ProductService', () => {
-    // Write logic here
+    // Testcase to check whether the products of a category are returned
+    // Use spyOn to give a value('fruitProducts') from return-data.ts when a function of service is called
   });
 });
 
@@ -117,6 +118,7 @@ describe('ProductsComponent- search for a product', () => {
   });
 
   it('should get searched from ProductService', () => {
-  // Write logic here
+    // Testcase to check whether all products are returned
+    // Use spyOn to give a value('allProducts') from return-data.ts when a function of service is called
   });
 });

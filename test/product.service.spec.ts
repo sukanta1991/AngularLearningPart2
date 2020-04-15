@@ -23,19 +23,23 @@ describe('ProductService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should have getAllProducts method', () => {
-    // Write logic here
+  it('should have getAllProducts function', () => {
+    // Testcase to check function existence
   });
 
-  it('should have getProductByCategory method', () => {
-    // Write logic here
+  it('should have getProductByCategory function', () => {
+    // Testcase to check function existence
   });
 
-  it('should get 9 products of category fruit', () => {
-    // Write logic here
+  it('getProductByCategory function should get 9 products of category fruit', () => {
+    // Testcase to check whether function returns products of a category 'fruit'
+    // Use httpTestingController to create a mock backend to return a value(fruitProducts) from return-data.ts
+    // mock backend should also check the header for Authorization key and also the method of the request
   });
 
-  it('should get all 34 products', () => {
-    // Write logic here
+  it('getAllProducts function should get all 34 products', () => {
+    // Testcase to check whether function returns all product
+    // Use httpTestingController to create a mock backend to return a value(allProducts) from return-data.ts
+    // mock backend should also check the header for Authorization key and also the method of the request
   });
 });

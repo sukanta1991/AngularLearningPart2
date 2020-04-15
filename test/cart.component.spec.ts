@@ -38,52 +38,41 @@ describe('CartComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should have calculate method', () => {
-    expect(component.calculate).toBeTruthy();
+  it('should have calculate function', () => {
+    // Testcase to check function existence
   });
 
-  it('should have getCart method', () => {
-    expect(component.getCart).toBeTruthy();
+  it('should have getCart function', () => {
+    // Testcase to check function existence
   });
 
-  it('should have remove method', () => {
-    expect(component.remove).toBeTruthy();
+  it('should have remove function', () => {
+    // Testcase to check function existence
   });
 
-  it('should have update method', () => {
-    expect(component.update).toBeTruthy();
+  it('should have update function', () => {
+    // Testcase to check function existence
   });
 
-  it('should have checkOut method', () => {
-    expect(component.checkOut).toBeTruthy();
+  it('should have checkOut function', () => {
+    // Testcase to check function existence
   });
 
-  it('calculate method calculates total and subTotal', () => {
-    component.ngOnInit();
-    expect(component.total).toEqual(4486);
-    expect(component.subTotal[0]).toEqual(3430);
-    expect(component.subTotal[1]).toEqual(1056);
+  it('calculate function calculates total and subTotal', () => {
+    // Testcase to check whether function to calulate total
   });
 
-  it('remove method to remove first item in cart', () => {
-    component.ngOnInit();
-    component.remove(0);
-    expect(component.total).toEqual(1056);
-    expect(component.subTotal[0]).toEqual(1056);
+  it('remove function to remove first item in cart', () => {
+    // Testcase to check whether function removes item from cart
   });
 
-  it('remove method to remove an item in cart', () => {
-    component.ngOnInit();
-    component.remove(1);
-    expect(component.total).toEqual(3430);
-    expect(component.subTotal[0]).toEqual(3430);
+  it('remove function to remove an item in cart', () => {
+    // Testcase to check whether function removes item from cart
   });
 
-  it('checkOut method to add Order to backend', () => {
-    component.ngOnInit();
-    component.checkOut();
-    expect(orderService.addOrders).toHaveBeenCalled();
-    expect(sessionStorage.getItem('cart')).toBeNull();
+  it('checkOut function to add Order to backend', () => {
+    // Testcase to check whether function adds a new order
+    // Use spyOn to mock a function of service
   });
 
 

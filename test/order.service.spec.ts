@@ -22,20 +22,24 @@ describe('OrderService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should have addOrders method', () => {
-    // Write logic here
+  it('should have addOrders function', () => {
+    // Testcase to check function existence
   });
 
-  it('should have getOrdersByCustomer method', () => {
-    // Write logic here
+  it('should have getOrdersByCustomer function', () => {
+    // Testcase to check function existence
   });
 
-  it('should get all orders of a customer', () => {
-    // Write logic here
+  it('getOrdersByCustomer function should get all orders of a customer', () => {
+    // Testcase to check whether function returns all orders of a customer id '1'
+    // Use httpTestingController to create a mock backend to return a value(ordersByCustomer) from return-data.ts
+    // mock backend should also check the header for Authorization key and also the method of the request
   });
 
-  it('should add a order in backend', () => {
-    // Write logic here
+  it('addOrders function should add a order to backend', () => {
+    // Testcase to check whether function send a value(order) from return-data.ts to backend
+    // Use httpTestingController to create a mock backend to check whether sent value(order) from return-data.ts is correct
+    // mock backend should also check the header for Authorization key and also the method of the request
   });
 
 });
