@@ -10,6 +10,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { user, ordersByCustomer } from './return-data';
 import { of } from 'rxjs';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 describe('AccountComponent', () => {
   let component: AccountComponent;
@@ -22,7 +25,15 @@ describe('AccountComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ AccountComponent, HeaderComponent, FooterComponent ],
-      imports: [FormsModule, ReactiveFormsModule, RouterTestingModule, HttpClientModule],
+      imports: [
+        CommonModule,
+        BrowserAnimationsModule,
+        ToastrModule.forRoot(),
+        FormsModule,
+        ReactiveFormsModule,
+        RouterTestingModule,
+        HttpClientModule,
+      ],
       providers: [AccountService, OrderService]
     })
     .compileComponents();

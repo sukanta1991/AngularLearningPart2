@@ -8,6 +8,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { of } from 'rxjs';
 import { token } from './return-data';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 describe('HeaderComponent', () => {
   const newUser = { email: 'bruno@email.com', password: 'bruno' };
@@ -19,7 +22,14 @@ describe('HeaderComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ HeaderComponent ],
-      imports: [ReactiveFormsModule, RouterTestingModule, HttpClientModule],
+      imports: [
+        CommonModule,
+        BrowserAnimationsModule,
+        ToastrModule.forRoot(),
+        ReactiveFormsModule,
+        RouterTestingModule,
+        HttpClientModule,
+      ],
       providers: [LoginRegisterService]
     })
     .compileComponents();

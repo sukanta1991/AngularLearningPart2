@@ -90,7 +90,7 @@ export class HeaderComponent implements OnInit {
         this.isLoggedIn = true;
         this.accountService.getAccountDetails(post.email).subscribe((details) => {
           if (details[0] === undefined) {
-            this.accountService.updateAccountDetails(this.user).subscribe();
+            this.accountService.addAccountDetails(this.user).subscribe();
             sessionStorage.setItem('user', JSON.stringify(this.user));
           } else {
             sessionStorage.setItem('user', JSON.stringify(details[0]));

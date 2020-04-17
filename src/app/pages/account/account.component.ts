@@ -3,6 +3,7 @@ import { Customer } from 'src/app/modals/customer';
 import { OrderService } from 'src/app/services/order.service';
 import { AccountService } from 'src/app/services/account.service';
 import { Order } from 'src/app/modals/order';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-account',
@@ -15,7 +16,7 @@ export class AccountComponent implements OnInit {
   user: Customer = {};
   orders: Order[];
 
-  constructor(private orderService: OrderService, private accountService: AccountService) { }
+  constructor(private orderService: OrderService, private accountService: AccountService, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.getUserDetails();
@@ -30,7 +31,8 @@ export class AccountComponent implements OnInit {
   // Function to update changes made by user to backend
   update() {
     sessionStorage.setItem('user', JSON.stringify(this.user));
-    this.accountService.updateAccountDetails(this.user);
+    this.toastr.success('updated details');
+    this.accountService.updateAccountDetails(this.user).subscribe();
   }
 
   // Function to get all orders of the user from backend

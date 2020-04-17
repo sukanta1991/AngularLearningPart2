@@ -9,6 +9,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { cart, user } from './return-data';
 import { of } from 'rxjs';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 describe('CartComponent', () => {
   let component: CartComponent;
@@ -18,7 +21,15 @@ describe('CartComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ CartComponent, HeaderComponent, FooterComponent ],
-      imports: [FormsModule, ReactiveFormsModule, RouterTestingModule, HttpClientModule],
+      imports: [
+        CommonModule,
+        BrowserAnimationsModule,
+        ToastrModule.forRoot(),
+        FormsModule,
+        ReactiveFormsModule,
+        RouterTestingModule,
+        HttpClientModule,
+      ],
       providers: [OrderService]
     })
     .compileComponents();

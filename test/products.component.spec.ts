@@ -12,6 +12,9 @@ import { FooterComponent } from 'src/app/pages/footer/footer.component';
 import { Product } from 'src/app/modals/product';
 import { Router, ActivatedRoute } from '@angular/router';
 import { allProducts, fruitProducts, token } from './return-data';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 describe('ProductsComponent', () => {
   let component: ProductsComponent;
@@ -21,7 +24,14 @@ describe('ProductsComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ProductsComponent, HeaderComponent, FooterComponent],
-      imports: [ReactiveFormsModule, RouterTestingModule, HttpClientModule],
+      imports: [
+        CommonModule,
+        BrowserAnimationsModule,
+        ToastrModule.forRoot(),
+        ReactiveFormsModule,
+        RouterTestingModule,
+        HttpClientModule,
+      ],
       providers: [ProductService],
     }).compileComponents();
   }));

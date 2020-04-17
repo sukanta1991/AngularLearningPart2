@@ -43,4 +43,10 @@ describe('AccountService', () => {
     // mock backend should also check the header for Authorization key and also the method of the request
   });
 
+  it('should create users account using addAccountDetails method', () => {
+    // Testcase to check whether function send a value(customer) from return-data.ts to backend
+    // Use httpTestingController to create a mock backend to check whether sent customer from return-data.ts is correct
+    // mock backend should also check the header for Authorization key and also the method of the request
+  });
+
 });
