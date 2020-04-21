@@ -12,9 +12,9 @@ In order to increase their product consumers Organic world needs a solution that
 
 ## HIGH LEVEL REQUIREMENTS
 
-- The application has to be unit tested as well as end-to-end tested using. All functions in each components to be tested individually in unit testing without backend support.
+- The application has to be unit tested as well as end-to-end tested. All functions in each components to be tested individually in unit testing without backend support.
 
-- In e2e testing allevery component is tested together with the backend support using protractor. Uint testing should be done using mock values given with jasmine's mock testing libraries.
+- In e2e testing every component is tested together with the backend support using protractor. Unit testing should be done using mock values given with jasmine's mock testing libraries.
 
 ## The roles in this application are
 
