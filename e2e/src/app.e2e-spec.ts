@@ -102,10 +102,6 @@ describe('OrganicWorld App', () => {
     // Write logic here
   });
 
-  it('should have account page with an accordion with two cards "User Details" and "Previous Orders"', () => {
-    // Write logic here
-  });
-
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
     const logs = await browser.manage().logs().get(logging.Type.BROWSER);
