@@ -1,5 +1,5 @@
 import { AppPage } from './app.po';
-import { browser, logging, element, By, by, protractor } from 'protractor';
+import { browser, logging, protractor } from 'protractor';
 
 
 const EC = protractor.ExpectedConditions;
