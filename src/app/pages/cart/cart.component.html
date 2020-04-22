@@ -25,9 +25,9 @@
           <tr *ngFor="let item of items; index as i">
             <td>{{item.productName}}</td>
             <td>{{item.price}}</td>
-            <td><input type="number" (change)="update()" class="form-control text-center w-50"
+            <td><input type="number" (change)="updateQuantity()" class="form-control text-center w-50"
                 [(ngModel)]=item.quantity></td>
-            <td>{{subTotal[i]}} <button (click)="remove(i)" class="btn btn-danger btn-sm float-right"><em
+            <td>{{subTotal[i]}} <button (click)="removeProduct(i)" class="btn btn-danger btn-sm float-right"><em
                   class="fa fa-trash-o"></em></button></td>
           </tr>
           <tr>

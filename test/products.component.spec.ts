@@ -46,11 +46,11 @@ describe('ProductsComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should have add function', () => {
+  it('should have addProduct function', () => {
     // Testcase to check function existence
   });
 
-  it('should have changeQuantitiy function', () => {
+  it('should have changeQuantity function', () => {
     // Testcase to check function existence
   });
 
@@ -58,7 +58,7 @@ describe('ProductsComponent', () => {
     // Testcase to check function existence
   });
 
-  it('add method should add a product to sessionStorage item "cart" ', () => {
+  it('addProduct method should add a product to sessionStorage item "cart" ', () => {
     // Testcase to check whether item is added to sessionStorage using a sample 'product' in return-data.ts
   });
 

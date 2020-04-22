@@ -49,7 +49,7 @@ describe('CartComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should have calculate function', () => {
+  it('should have calculateTotal function', () => {
     // Testcase to check function existence
   });
 
@@ -57,11 +57,11 @@ describe('CartComponent', () => {
     // Testcase to check function existence
   });
 
-  it('should have remove function', () => {
+  it('should have removeProduct function', () => {
     // Testcase to check function existence
   });
 
-  it('should have update function', () => {
+  it('should have updateQuantity function', () => {
     // Testcase to check function existence
   });
 
@@ -69,15 +69,15 @@ describe('CartComponent', () => {
     // Testcase to check function existence
   });
 
-  it('calculate function calculates total and subTotal', () => {
+  it('calculateTotal function calculates total and subTotal', () => {
     // Testcase to check whether function to calulate total
   });
 
-  it('remove function to remove first item in cart', () => {
+  it('removeProduct function to remove first item in cart', () => {
     // Testcase to check whether function removes item from cart
   });
 
-  it('remove function to remove an item in cart', () => {
+  it('removeProduct function to remove an item in cart', () => {
     // Testcase to check whether function removes item from cart
   });
 

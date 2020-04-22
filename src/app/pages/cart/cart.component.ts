@@ -39,13 +39,13 @@ export class CartComponent implements OnInit {
   }
 
   // Function to update quantity when changed
-  update() {
-    this.calculate();
+  updateQuantity() {
+    this.calculateTotal();
     sessionStorage.setItem('cart', JSON.stringify(this.items));
   }
 
   // Function to calculate total and subtotal
-  calculate() {
+  calculateTotal() {
     this.total = 0;
     this.items.forEach((item, i) => {
       this.subTotal[i] = item.price * item.quantity;
@@ -54,9 +54,9 @@ export class CartComponent implements OnInit {
   }
 
   // Function to remove the product of given index
-  remove(index) {
+  removeProduct(index) {
     this.items.splice(index, 1);
-    this.calculate();
+    this.calculateTotal();
     sessionStorage.setItem('cart', JSON.stringify(this.items));
   }
 
