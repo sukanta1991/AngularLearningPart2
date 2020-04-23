@@ -41,7 +41,7 @@ export class ProductsComponent implements OnInit {
       } else {
         if (
           params.name !== undefined ||
-          this.router.url.includes('product/search')
+          this.router.url.includes('products/search')
         ) {
           this.productService.getAllProducts().subscribe((data) => {
             this.items = data.filter(
@@ -51,7 +51,7 @@ export class ProductsComponent implements OnInit {
             );
             console.log(this.items);
           });
-        } else if (this.router.url === '/products/all') {
+        } else if (this.router.url.includes('/products/all')) {
           console.log('Product');
           this.productService
             .getAllProducts()

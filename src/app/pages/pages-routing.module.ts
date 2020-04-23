@@ -15,21 +15,21 @@ export const routes: Routes = [
   {
     path: 'products/all',
     component: ProductsComponent,
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard]
   },
   // To get products of particular category
   // Should have RouteGuard
   {
     path: 'products/:category',
     component: ProductsComponent,
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard]
   },
   // To get products being searched
   // Should have RouteGuard
   {
     path: 'products/search/:name',
     component: ProductsComponent,
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard]
   },
   { path: 'cart', component: CartComponent },
   // To get user account details

@@ -85,7 +85,6 @@ export class HeaderComponent implements OnInit {
   logIn(post) {
     this.loginService.login(post).subscribe(
       result => {
-        console.log('token received: ' + result.access_token);
         sessionStorage.setItem('token', result.access_token);
         this.isLoggedIn = true;
         this.accountService.getAccountDetails(post.email).subscribe((details) => {
@@ -99,7 +98,6 @@ export class HeaderComponent implements OnInit {
         this.route.navigateByUrl('products/all');
       },
       error => {
-        console.log(error);
         this.toastr.error(error, 'Login Error', {
           timeOut: 3000
         });

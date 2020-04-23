@@ -11,6 +11,7 @@ import { token } from './return-data';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 describe('HeaderComponent', () => {
   const newUser = { email: 'bruno@email.com', password: 'bruno' };
@@ -18,6 +19,8 @@ describe('HeaderComponent', () => {
   let service: LoginRegisterService;
   let accountService: AccountService;
   let fixture: ComponentFixture<HeaderComponent>;
+  let router: Router;
+  let routerNavigateSpy;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -27,7 +30,12 @@ describe('HeaderComponent', () => {
         BrowserAnimationsModule,
         ToastrModule.forRoot(),
         ReactiveFormsModule,
-        RouterTestingModule,
+        RouterTestingModule.withRoutes([
+          {
+            path: '',
+            component: HeaderComponent,
+          },
+        ]),
         HttpClientModule,
       ],
       providers: [LoginRegisterService]
