@@ -30,7 +30,7 @@ export class CartComponent implements OnInit {
     this.items = JSON.parse(sessionStorage.getItem('cart'));
     if (this.items !== null) {
       this.emptyCart = false;
-      this.calculate();
+      this.calculateTotal();
     }
   }
 
