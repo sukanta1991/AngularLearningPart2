@@ -14,6 +14,7 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
+
 // Class to display header
 export class HeaderComponent implements OnInit {
   @ViewChild('openModal', { static: false }) openModal: ElementRef;
@@ -58,7 +59,7 @@ export class HeaderComponent implements OnInit {
     this.registerForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(7)]],
-      confirmPassword: ['', [Validators.required]],
+      confirmPassword: ['', Validators.required],
     },
     {
      validator: MustMatch('password', 'confirmPassword')
@@ -81,7 +82,7 @@ export class HeaderComponent implements OnInit {
   //  store the authentication token in a sessionStorage item 'token' and
   //  if user account is crated get user details using accountService or
   //  else create a user account for registered user using updateAccountDetails in accountService
-  //  and store in a sessionStorage item 'user' and navigate to 'products/all'
+  //  and store in a sessionStorage item 'user' and navigate to '/products/all'
   logIn(post) {
     this.loginService.login(post).subscribe(
       result => {

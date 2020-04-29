@@ -44,11 +44,7 @@ export class AccountService {
       }),
     };
     return this.httpClient
-      .put(
-        environment.API_URL + '/customers/' + payload.id,
-        payload,
-        httpOptions
-      )
+      .put(environment.API_URL + '/customers/' + payload.id, payload, httpOptions)
       .pipe(
         retry(3), // retry a failed request up to 3 times
         catchError(this.errorHandler.handleError) // then handle the error
@@ -71,4 +67,5 @@ export class AccountService {
         catchError(this.errorHandler.handleError) // then handle the error
       );
   }
+
 }

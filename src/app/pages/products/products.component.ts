@@ -49,10 +49,8 @@ export class ProductsComponent implements OnInit {
                 item.name.includes(params.name) ||
                 item.name.toLowerCase().includes(params.name)
             );
-            console.log(this.items);
           });
         } else if (this.router.url.includes('/products/all')) {
-          console.log('Product');
           this.productService
             .getAllProducts()
             .subscribe((data) => (this.items = data));
