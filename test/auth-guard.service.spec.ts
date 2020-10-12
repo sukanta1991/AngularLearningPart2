@@ -11,7 +11,8 @@ describe('AuthGuardService', () => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
       providers: [AuthGuardService],
-    });
+    });    
+    service = TestBed.get(AuthGuardService);
   });
 
   it('should be created', () => {
@@ -19,11 +20,13 @@ describe('AuthGuardService', () => {
   });
 
   it('should have canActivate function', () => {
-    // Testcase to check function existence
+    expect(service.canActivate).toBeDefined();
   });
 
   it('canActivate function should check sessionStorage for token', () => {
     // Testcase to check whether function verifies user is authenticated
+    sessionStorage.setItem('token',token.access_token);
+    expect(service.canActivate()).toBeTruthy();
   });
 
 });

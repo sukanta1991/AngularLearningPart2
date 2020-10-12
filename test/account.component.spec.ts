@@ -53,24 +53,36 @@ describe('AccountComponent', () => {
 
   it('should have getOrders function', () => {
     // Testcase to check function existence
+    expect(component.getOrders).toBeDefined();
   });
 
   it('should have getUserDetails function', () => {
     // Testcase to check function existence
+    expect(component.getUserDetails).toBeDefined();
   });
 
   it('should have update function', () => {
     // Testcase to check function existence
+    expect(component.update).toBeDefined();
   });
 
   it('getOrders should get all the orders of the user', () => {
     // Testcase to check whether function returns all orders of a customer using customer id '1'
     // Use spyOn to give a value(ordersByCustomer) from return-data.ts when a function of service is called
+    spyOn(orderService, 'getOrdersByCustomer').and.returnValue(of(ordersByCustomer));
+    component.user = user;
+    component.getOrders();
+    expect(component.orders).toBe(ordersByCustomer);
+    expect(orderService.getOrdersByCustomer).toHaveBeenCalledTimes(1);
   });
 
   it('update function should update the user details in backend', () => {
     // Testcase to check whether function updates the customer updated details
     // Use spyOn to mock a function of service
+    spyOn(accountService,'updateAccountDetails').and.returnValue(of(user));
+    component.user = user;
+    component.update();
+    expect(accountService.updateAccountDetails).toHaveBeenCalledTimes(1);
   });
 
 });
