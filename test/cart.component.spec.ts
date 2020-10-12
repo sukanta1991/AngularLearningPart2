@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
-fdescribe('CartComponent', () => {
+describe('CartComponent', () => {
   let component: CartComponent;
   let orderService: OrderService;
   let fixture: ComponentFixture<CartComponent>;
