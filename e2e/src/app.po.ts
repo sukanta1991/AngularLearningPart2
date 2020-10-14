@@ -1,4 +1,4 @@
-import { browser, by, element, ElementFinder } from 'protractor';
+import { browser, by, element, ElementFinder, $ } from 'protractor';
 
 export class AppPage {
   navigateToBase() {
@@ -15,6 +15,10 @@ export class AppPage {
   }
   toHeader(): ElementFinder {
     return element(by.tagName('<app-header>'));
+  }
+  // function to get navbar
+  getNavbar() {
+    return $('nav');
   }
 
 }
